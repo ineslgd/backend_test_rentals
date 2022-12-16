@@ -1,5 +1,8 @@
 class Mission < ApplicationRecord
   belongs_to :listing
-  has_many :bookings, dependent: :destroy
-  has_many :reservation, dependent: :destroy
+
+  # Enum lets you declare an enum attribute where the values map to integers
+  # in the database, but can be queried by name.
+  enum mission_type: {first_checkin: 0, last_checkout: 1, checkout_checkin: 2}
+  validates :date, :mission_type, :price, presence: true
 end

@@ -28,9 +28,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_102130) do
 
   create_table "missions", force: :cascade do |t|
     t.integer "listing_id", null: false
-    t.date "first_checkin"
-    t.date "last_checkout"
-    t.date "checkout_checkin"
+    t.date "date"
+    t.integer "mission_type"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["listing_id"], name: "index_missions_on_listing_id"
